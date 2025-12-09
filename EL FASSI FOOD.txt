@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مطعم الوجبات السريعة</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #000; /* خلفية سوداء */
+    color: #fff; /* نصوص بيضاء */
+}
+header {
+    background-color: #ffc107; /* أصفر */
+    color: #000; /* نص أسود */
+    text-align: center;
+    padding: 20px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333; /* شريط أسود غامق */
+}
+nav a {
+    color: #ffc107; /* نص أصفر */
+    padding: 15px 25px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #555; /* تأثير عند المرور */
+}
+section {
+    padding: 20px;
+    text-align: center;
+}
+.food-card {
+    display: inline-block;
+    width: 250px;
+    margin: 15px;
+    border: 2px solid #ffc107; /* إطار أصفر */
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #111; /* خلفية داكنة للبطاقات */
+    transition: transform 0.2s;
+}
+.food-card:hover {
+    transform: scale(1.05);
+}
+.food-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.food-card h3 {
+    margin: 10px 0;
+    color: #ffc107; /* عنوان أصفر */
+}
+.food-card p {
+    color: #ddd; /* وصف فاتح */
+}
+.food-card span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffc107; /* السعر أصفر */
+}
+footer {
+    background-color: #333; /* تذييل أسود */
+    color: #ffc107; /* نص أصفر */
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <h1>مطعم الوجبات السريعة</h1>
+    <p>أطيب الأكلات بأسرع وقت!</p>
+</header>
+
+<nav>
+    <a href="#home">الرئيسية</a>
+    <a href="#menu">القائمة</a>
+    <a href="#contact">اتصل بنا</a>
+</nav>
+
+<section id="home">
+    <h2>مرحباً بكم في مطعمنا</h2>
+    <p>أفضل وجبات سريعة طازجة وشهية!</p>
+</section>
+
+<section id="menu">
+    <h2>قائمة الطعام</h2>
+    <div id="food-container"></div>
+</section>
+
+<section id="contact">
+    <h2>اتصل بنا</h2>
+    <p>رقم الهاتف: 123456789</p>
+    <p>العنوان: شارع المدينة</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 مطعم الوجبات السريعة</p>
+</footer>
+
+<script>
+// قائمة الطعام
+const foods = [
+    {name: "برجر لحم", description: "برجر لذيذ مع جبن وخس", price: "50 درهم", image: "https://via.placeholder.com/250x150"},
+    {name: "بيتزا", description: "بيتزا مع الجبن والصلصة", price: "70 درهم", image: "https://via.placeholder.com/250x150"},
+    {name: "بطاطس مقلية", description: "بطاطس مقرمشة وساخنة", price: "20 درهم", image: "https://via.placeholder.com/250x150"},
+    {name: "مشروب غازي", description: "مشروب بارد ومنعش", price: "10 درهم", image: "https://via.placeholder.com/250x150"}
+];
+
+// عرض الطعام ديناميكياً
+const container = document.getElementById("food-container");
+foods.forEach(food => {
+    const card = document.createElement("div");
+    card.classList.add("food-card");
+    card.innerHTML = `
+        <img src="${food.image}" alt="${food.name}">
+        <h3>${food.name}</h3>
+        <p>${food.description}</p>
+        <span>${food.price}</span>
+    `;
+    container.appendChild(card);
+});
+</script>
+
+</body>
+</html>
